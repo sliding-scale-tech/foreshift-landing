@@ -46,8 +46,11 @@ export default function Terms() {
 
         <h2>4. Purchases, billing and renewal</h2>
         <ul>
-          <li>All prices are in <strong>US Dollars (USD)</strong>. Launch pricing is <span className="tbd">Pricing TBD</span>.</li>
-          <li>Demand reports are one-time purchases. The AI Intelligence Pass is a monthly subscription.</li>
+          <li>
+            All prices are in <strong>US Dollars (USD)</strong>: Event Intelligence 99 per month, Dynamic Scheduling
+            199 per month, Sales Forecasting 299 per month. Each tier includes the one below it.
+          </li>
+          <li>ForeShift is sold as a monthly subscription. There is no one-time purchase option.</li>
           <li>
             Subscriptions renew automatically each month at the then-current price until you cancel. You authorize us to
             charge your payment method for each renewal.

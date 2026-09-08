@@ -57,10 +57,59 @@ export const CONCEPTS = [
   "Neighborhood / Casual Bar",
 ];
 
+// Pricing tiers. Amounts are in US Dollars (USD), billed monthly.
+export const TIERS = [
+  {
+    name: "Event Intelligence",
+    tagline: "Know your city.",
+    price: "$99",
+    period: "USD per month",
+    featured: true,
+    cta: { label: "Upgrade", href: "#/#access" },
+    features: [
+      "Weather forecast for the week",
+      "Sports — all Detroit teams",
+      "Concerts, tradeshows, festivals, 5Ks",
+      "Demand signal per event for your zone",
+      "Thirty seconds to start — zone and type only",
+    ],
+  },
+  {
+    name: "Dynamic Scheduling",
+    tagline: "Know your schedule.",
+    price: "$199",
+    period: "USD per month",
+    featured: false,
+    cta: { label: "Contact Sales", href: "mailto:hello@foreshift.ai" },
+    features: [
+      "Everything in Tier 1",
+      "Shift-level staffing recommendations",
+      "Estimated covers per daypart",
+      "Server and kitchen crew counts",
+      "Revenue estimate per shift",
+    ],
+  },
+  {
+    name: "Sales Forecasting",
+    tagline: "Know your numbers.",
+    price: "$299",
+    period: "USD per month",
+    featured: false,
+    cta: { label: "Contact Sales", href: "mailto:hello@foreshift.ai" },
+    features: [
+      "Everything in Tier 2",
+      "Thirty-day forward revenue projection",
+      "POS or CSV historical data upload",
+      "Variance tracking: predicted vs actual",
+      "Market intelligence for expansion",
+    ],
+  },
+];
+
 export const FAQS = [
   {
     q: "Is this a prediction of my restaurant's sales?",
-    a: "No. ForeShift forecasts demand in your zone for your concept type — the size of the wave. What you capture of it depends on you: your menu, your service, your reputation, your team.",
+    a: "Event Intelligence and Dynamic Scheduling forecast demand in your zone for your concept type — the size of the wave, not your covers. What you capture of it depends on you: your menu, your service, your reputation, your team. Sales Forecasting is the tier that projects your own numbers, and it does that from the historical data you upload.",
   },
   {
     q: "Where does the data come from?",
@@ -76,11 +125,11 @@ export const FAQS = [
   },
   {
     q: "Do I need to integrate my POS?",
-    a: "No. There is nothing to install and no integration to run. You enter your address and concept type, and you're set up.",
+    a: "No. Event Intelligence and Dynamic Scheduling need nothing but your address and concept type — thirty seconds to start. Sales Forecasting works from a historical data upload, either a POS export or a CSV, but there is still no live integration to install.",
   },
   {
     q: "What exactly am I buying?",
-    a: "Two things, separately. A demand report is a one-time purchase covering one zone. The AI Intelligence Pass is a monthly subscription — single zone or full city coverage — that you can cancel at any time. Pricing is [Pricing TBD]; all amounts will be charged in US Dollars (USD).",
+    a: "A monthly subscription in one of three tiers: Event Intelligence at $99 per month, Dynamic Scheduling at $199 per month, or Sales Forecasting at $299 per month. All amounts are in US Dollars (USD). Each tier includes everything in the one below it, and you can cancel at any time.",
   },
   {
     q: "How is my payment handled?",

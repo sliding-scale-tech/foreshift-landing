@@ -1,6 +1,6 @@
 import { useState } from "react";
 import WeekGrid from "../components/WeekGrid.jsx";
-import { CONCEPTS, CONTACT, FAQS, ZONES } from "../data.js";
+import { CONCEPTS, CONTACT, FAQS, TIERS, ZONES } from "../data.js";
 
 function WaitlistForm({ onDark = false }) {
   const [sent, setSent] = useState(false);
@@ -45,6 +45,16 @@ function WaitlistForm({ onDark = false }) {
         We use your email to contact you about ForeShift access. See our <a href="#/privacy">privacy policy</a>.
       </p>
     </>
+  );
+}
+
+function Tick() {
+  return (
+    <span className="tick" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round">
+        <polyline points="4 12 10 18 20 6" />
+      </svg>
+    </span>
   );
 }
 
@@ -261,8 +271,11 @@ export default function Landing() {
                 <p className="mb0">Every answer is written from the forecast for your zone, concept, day, and daypart. If the forecast doesn't say it, the answer doesn't either.</p>
               </div>
               <div className="card">
-                <h3>Sold as a monthly subscription</h3>
-                <p className="mb0">Tiers for a single zone or full city coverage. Cancel any time — see <a href="#/policies">refunds &amp; cancellation</a>.</p>
+                <h3>Part of your subscription</h3>
+                <p className="mb0">
+                  Billed monthly, cancel any time. Which tiers include the Intelligence Pass is <span className="tbd">TBD</span> —
+                  see <a href="#/#pricing">pricing</a> and <a href="#/policies">refunds &amp; cancellation</a>.
+                </p>
               </div>
             </div>
           </div>
@@ -314,60 +327,46 @@ export default function Landing() {
       {/* ---------- Pricing ---------- */}
       <section className="section" id="pricing">
         <div className="wrap">
-          <div className="section__head">
+          <div className="section__head section__head--center">
             <div className="eyebrow">Pricing</div>
-            <h2>Two ways to buy</h2>
+            <h2 className="h2--accent">Three tiers. One ecosystem.</h2>
             <p className="lede">
-              Pricing for the launch market is being finalized. All prices and charges will be shown and billed in
-              <strong> US Dollars (USD)</strong>, inclusive of any applicable taxes shown at checkout.
+              Every tier includes the one below it. All prices are in <strong>US Dollars (USD)</strong>, billed monthly,
+              cancel any time. Applicable taxes are shown at checkout.
             </p>
           </div>
-          <div className="grid grid--3">
-            <div className="card card--price">
-              <h3>Demand report</h3>
-              <div className="price__tag"><span className="tbd">Pricing TBD</span></div>
-              <div className="price__cur">One-time purchase · billed in USD</div>
-              <ul className="price__list">
-                <li>One zone, one concept type</li>
-                <li>Demand band for every day × daypart</li>
-                <li>Full week view</li>
-                <li>Event and weather drivers included</li>
-                <li>Delivered in your account immediately after payment</li>
-              </ul>
-              <a className="btn btn--primary" href="#/#access">Request access</a>
-            </div>
-            <div className="card card--price">
-              <h3>AI Intelligence Pass — single zone</h3>
-              <div className="price__tag"><span className="tbd">Pricing TBD</span></div>
-              <div className="price__cur">Monthly subscription · billed in USD · cancel any time</div>
-              <ul className="price__list">
-                <li>Everything in the demand report</li>
-                <li>Plain-English questions and answers</li>
-                <li>Answers grounded in your forecast</li>
-                <li>One zone of coverage</li>
-                <li>Renews monthly until cancelled</li>
-              </ul>
-              <a className="btn btn--primary" href="#/#access">Request access</a>
-            </div>
-            <div className="card card--price">
-              <h3>AI Intelligence Pass — full city</h3>
-              <div className="price__tag"><span className="tbd">Pricing TBD</span></div>
-              <div className="price__cur">Monthly subscription · billed in USD · cancel any time</div>
-              <ul className="price__list">
-                <li>All 13 Detroit zones</li>
-                <li>All 9 concept types</li>
-                <li>Compare zones before you commit</li>
-                <li>For multi-venue and small-group operators</li>
-                <li>Renews monthly until cancelled</li>
-              </ul>
-              <a className="btn btn--primary" href="#/#access">Request access</a>
-            </div>
+
+          <div className="tiers">
+            {TIERS.map((tier) => (
+              <div className={`tier${tier.featured ? " tier--featured" : ""}`} key={tier.name}>
+                <div className="tier__head">
+                  <h3 className="tier__name">{tier.name}</h3>
+                  <div className="tier__tag">{tier.tagline}</div>
+                  <div className="tier__price">{tier.price}</div>
+                  <div className="tier__per">{tier.period}</div>
+                </div>
+                <div className="tier__body">
+                  <ul className="tier__list">
+                    {tier.features.map((f) => (
+                      <li key={f}>
+                        <Tick />
+                        <span>{f}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <a className="btn btn--onDark btn--block" href={tier.cta.href}>
+                    {tier.cta.label}
+                  </a>
+                </div>
+              </div>
+            ))}
           </div>
-          <p className="small muted" style={{ marginTop: 18 }}>
-            Promotions, discounts, and trials: ForeShift is not running any promotional offer at this time. If we offer one,
-            its full terms — duration, eligibility, what happens when it ends, and how to cancel — will be shown on this page
-            and at checkout before you agree to it. See our <a href="#/policies">refunds &amp; cancellation policy</a> and{" "}
-            <a href="#/terms">terms of service</a>.
+
+          <p className="small muted" style={{ marginTop: 22 }}>
+            Subscriptions renew monthly at the price above until you cancel. Promotions, discounts, and trials: ForeShift
+            is not running any promotional offer at this time. If we offer one, its full terms — duration, eligibility,
+            what happens when it ends, and how to cancel — will be shown on this page and at checkout before you agree to
+            it. See our <a href="#/policies">refunds &amp; cancellation policy</a> and <a href="#/terms">terms of service</a>.
           </p>
         </div>
       </section>

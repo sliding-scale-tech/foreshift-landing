@@ -31,6 +31,21 @@ src/
 Routing is hash-based (`#/privacy`, `#/#pricing`) so the build deploys as static
 files anywhere without server rewrite rules.
 
+## Pricing
+
+Three monthly tiers, defined in `TIERS` in `src/data.js` — edit there, not in the
+markup:
+
+| Tier | Price (USD/month) | Positioning |
+| --- | --- | --- |
+| Event Intelligence | $99 | Know your city. |
+| Dynamic Scheduling | $199 | Know your schedule. |
+| Sales Forecasting | $299 | Know your numbers. |
+
+Each tier includes the one below it. Because real prices are published, the amounts,
+currency, and renewal terms are mirrored in Policies §§1–2 and Terms §4 — **keep those
+in sync when pricing changes**.
+
 ## Design
 
 - Navy/blue theme; light and dark both supported (toggle in the nav, remembered in
@@ -47,8 +62,8 @@ Built against <https://docs.stripe.com/get-started/checklist/website>.
 
 | Checklist item | Where |
 | --- | --- |
-| Description of what you're selling | Landing hero, "How it works", "What you see", Pricing; itemized in Policies §1 |
-| The purchase currency | USD stated on Pricing, in every pricing card, the footer, Policies §2, Security, and FAQ |
+| Description of what you're selling | Landing hero, "How it works", "What you see", the three tier cards; itemized per tier in Policies §1 |
+| The purchase currency | Every tier card reads "USD per month" (not just `$`), plus the Pricing intro, footer, Policies §2, Security, and FAQ |
 | Customer service contact information | Contact page (support email, sales email, phone, hours, live chat), plus footer, security section, and every legal page — direct channels, not a form |
 | Fulfillment policies — refund | Policies §5 |
 | Fulfillment policies — delivery | Policies §3 (digital delivery; explicitly states no shipping applies) |
@@ -68,8 +83,8 @@ Nothing on this site invents facts. Every unknown is marked `[TBD]` in the UI:
   (Stripe expects a reachable phone number and a physical address).
 - Legal entity name (Privacy, Terms), effective dates, statement descriptor,
   governing-law venue, subprocessor list, cookie inventory.
-- **Pricing**: replace the `[Pricing TBD]` badges with real USD amounts, and wire the
-  "Request access" CTAs to Stripe Checkout.
+- Wire the tier CTAs to Stripe Checkout. "Upgrade" currently points at the waitlist
+  anchor and "Contact Sales" opens `mailto:hello@foreshift.ai`.
 - The waitlist form currently confirms in the browser only — connect it to a real
   endpoint (`WaitlistForm` in `src/pages/Landing.jsx`).
 - Have counsel review Privacy, Terms, and Policies; then remove the "Pre-launch note"

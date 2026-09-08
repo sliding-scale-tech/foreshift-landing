@@ -18,18 +18,24 @@ export default function Policies() {
 
         <h2 id="what">1. What you are buying</h2>
         <p>
-          ForeShift sells digital demand forecasting for restaurant, bar, and cafe operators. There are two products:
+          ForeShift sells digital demand forecasting for restaurant, bar, and cafe operators, as a monthly subscription
+          in one of three tiers. Each tier includes everything in the tier below it:
         </p>
         <ul>
           <li>
-            <strong>Demand report</strong> — a one-time purchase covering a single ForeShift zone and concept type.
-            It contains a demand score and band for every day and daypart of the week, together with the event and
-            weather signals affecting the forecast.
+            <strong>Event Intelligence — 99 US Dollars (USD) per month.</strong> The week's weather forecast, Detroit
+            sports, concerts, tradeshows, festivals and 5Ks, and a demand signal per event for your zone. Setup needs
+            only your zone and concept type.
           </li>
           <li>
-            <strong>AI Intelligence Pass</strong> — a monthly subscription, offered in a single-zone tier and a
-            full-city tier, that lets you ask plain-English questions and receive written answers grounded in your
-            forecast numbers.
+            <strong>Dynamic Scheduling — 199 US Dollars (USD) per month.</strong> Everything in Event Intelligence,
+            plus shift-level staffing recommendations, estimated covers per daypart, server and kitchen crew counts,
+            and a revenue estimate per shift.
+          </li>
+          <li>
+            <strong>Sales Forecasting — 299 US Dollars (USD) per month.</strong> Everything in Dynamic Scheduling, plus
+            a thirty-day forward revenue projection, POS or CSV historical data upload, variance tracking of predicted
+            against actual, and market intelligence for expansion.
           </li>
         </ul>
         <p>
@@ -40,8 +46,9 @@ export default function Policies() {
         <h2 id="pricing">2. Prices and currency</h2>
         <p>
           All prices are quoted, and all charges are made, in <strong>US Dollars (USD)</strong>. The exact amount,
-          currency, and billing frequency are shown on the checkout page before you confirm payment. Launch pricing is
-          <span className="tbd">Pricing TBD</span>. Applicable taxes, if any, are shown at checkout. Your bank or card
+          currency, and billing frequency are shown on the checkout page before you confirm payment. Current pricing is
+          99, 199, or 299 USD per month depending on tier, renewing monthly until cancelled. Applicable taxes, if any,
+          are shown at checkout. Your bank or card
           issuer may apply its own foreign transaction or conversion fees, which ForeShift does not control.
         </p>
 
@@ -52,13 +59,15 @@ export default function Policies() {
         </p>
         <ul>
           <li>
-            <strong>Demand report:</strong> access is granted in your account at <a href="https://app.foreshift.ai">app.foreshift.ai</a>{" "}
-            immediately after payment is confirmed, normally within a few minutes. A receipt is emailed to the address
-            on the order.
+            <strong>All tiers:</strong> access is granted in your account at{" "}
+            <a href="https://app.foreshift.ai">app.foreshift.ai</a> immediately after your first payment is confirmed,
+            normally within a few minutes, and continues for as long as the subscription is active. A receipt is emailed
+            to the address on the order.
           </li>
           <li>
-            <strong>AI Intelligence Pass:</strong> access begins immediately after your first payment is confirmed and
-            continues for as long as the subscription is active.
+            <strong>Sales Forecasting:</strong> the forward revenue projection depends on the historical data you
+            upload. Forecast access is available immediately; projections appear once your POS export or CSV is
+            uploaded and processed.
           </li>
           <li>
             If you have paid and access has not appeared within 24 hours, email{" "}
@@ -69,7 +78,7 @@ export default function Policies() {
         <h2 id="cancellation">4. Cancellation</h2>
         <ul>
           <li>
-            You may cancel an AI Intelligence Pass subscription at any time from your account settings, or by emailing{" "}
+            You may cancel your subscription at any time from your account settings, or by emailing{" "}
             <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>.
           </li>
           <li>
@@ -80,21 +89,22 @@ export default function Policies() {
             There is no cancellation fee and no minimum term. Subscriptions renew monthly until you cancel.
           </li>
           <li>
-            A one-time demand report is not a subscription and has nothing to cancel once delivered — see refunds below.
+            Moving to a lower tier takes effect at the next renewal. Moving to a higher tier takes effect immediately,
+            and the difference is prorated for the remainder of the billing period.
           </li>
         </ul>
 
         <h2 id="refunds">5. Refunds</h2>
-        <p>Because ForeShift sells digital products delivered immediately, the following applies:</p>
+        <p>Because ForeShift sells a digital service delivered immediately, the following applies:</p>
         <ul>
           <li>
-            <strong>Demand report:</strong> if the report was not delivered, was delivered for the wrong zone or concept
-            type, or is unusable because of a fault on our side, contact us within <strong>14 days</strong> of purchase
-            and we will correct it or refund the purchase in full.
+            <strong>Any tier:</strong> you may request a full refund of your most recent monthly charge within{" "}
+            <strong>14 days</strong> of that charge. Earlier billing periods are not refundable.
           </li>
           <li>
-            <strong>AI Intelligence Pass:</strong> you may request a full refund of your most recent monthly charge
-            within <strong>14 days</strong> of that charge. Earlier billing periods are not refundable.
+            <strong>Service faults:</strong> if your forecast was unavailable, was set to the wrong zone or concept
+            type, or is unusable because of a fault on our side, contact us and we will correct it or refund the
+            affected billing period in full.
           </li>
           <li>
             <strong>Duplicate or accidental charges</strong> are refunded in full, without a time limit, as soon as we
