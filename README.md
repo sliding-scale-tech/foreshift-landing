@@ -80,3 +80,4 @@ No accuracy figures, ROI claims, customer counts, testimonials, or logos appear
 anywhere, and no model internals (formulas, coefficients, thresholds, proximity
 distances) are published. Band *names* only.
 # foreshift-landing
+# foreshift-landing
